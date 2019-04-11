@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'clubapp'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'USER' : 'postgres',
         'PASSWORD': 'P@ssw0rd1',
         'HOST' :'localhost',
-        'PORT' :'',
+        'PORT' :'5433',
     }
 }
 
