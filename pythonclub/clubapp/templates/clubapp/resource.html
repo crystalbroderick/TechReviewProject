@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Meetings</h2>
+<h2>Resource</h2>
 <table class="table">
     <tr>
         <th>Resource</th>
@@ -9,8 +9,8 @@
 <!-- loop -->
 {% for t in resource_list %}  
     <tr>
-        <td>{{t.meeting}}</td>
-        <td>{{t.meetingminutes}}</td>
+        <td>{{t.resourcename}}</td>
+        <td>{{t.resourcetype}}</td>
     </tr>
 {% endfor %}
 </table>

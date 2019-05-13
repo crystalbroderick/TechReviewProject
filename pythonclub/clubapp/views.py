@@ -5,7 +5,11 @@ from .models import Meeting, MeetingMinutes, Resource, Event
 def index(request):
     return render(request, 'clubapp/index.html')
 
-def getTypes(request):
-    types_list=ResourceType.objects.all() # or you can do .filter 
-    context={'resource_list': ResourceType_list }
-    return render(request, 'clubapp/resource.html', context=context) 
+def getResource(request):
+    Resource_list=Resource.objects.all() # or you can do .filter 
+    context={'resource_list': Resource_list }
+    return render(request, 'clubapp/resource.html', context=context)
+
+def getMeeting(request):
+    meeting_list=Meeting.objects.all()
+    return render(request, 'clubapp/meeting.html', {'meeting_list': meeting_list})
