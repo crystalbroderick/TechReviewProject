@@ -6,5 +6,5 @@ urlpatterns=[
     path('getTypes/', views.getTypes, name='types'),
     path('getProducts/', views.getProducts, name='products'),
     path('productDetail/<int:id>', views.productDetail, name='productdetail'),
-
+    path('newProduct/', views.newProduct, name='newproduct'),
 ]

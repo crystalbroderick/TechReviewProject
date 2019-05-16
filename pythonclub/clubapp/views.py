@@ -13,3 +13,7 @@ def getResource(request):
 def getMeeting(request):
     meeting_list=Meeting.objects.all()
     return render(request, 'clubapp/meeting.html', {'meeting_list': meeting_list})
+
+def meetingdetail(request, id):
+    meet=get_object_or_404(Product, pk=id)
+    context={   }
