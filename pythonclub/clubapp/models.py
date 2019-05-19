@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Meeting(models.Model):
-    meetingid=models.CharField(max_length=100)
     meetingtitle=models.CharField(max_length=255)
     meetingdate=models.DateField()
     meetingtime=models.TimeField()
@@ -19,7 +18,7 @@ class Meeting(models.Model):
 
 class MeetingMinutes(models.Model):
     meetingminutes=models.TextField()
-    meetingid=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
+    meetingtitle=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):

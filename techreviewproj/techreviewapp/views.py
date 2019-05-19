@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import TechType, Product, Review
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 def index(request):
@@ -37,3 +37,15 @@ def newProduct(request):
     else:
         form=ProductForm()
     return render(request, 'techreviewapp/newproduct.html', {'form': form})
+
+def newReview(request):  
+    form=ReviewForm
+    if request.method=='POST':
+        form=ReviewForm(request.POST) # upper case POST is a constant
+        if form.is_valid():
+            post=form.save(commit=True) # lower case post is a variable
+            post.save()
+            form=ReviewForm() # not required, but this clears data when done w/ form
+    else:
+        form=ReviewForm()
+    return render(request, 'techreviewapp/newreview.html', {'form': form})

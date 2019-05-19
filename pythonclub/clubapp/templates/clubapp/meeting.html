@@ -4,14 +4,14 @@
 <table class="table">
     <tr>
         <th>Meeting</th>
-        <th>Name</th>
+        <th>Date</th>
     </tr>
-    {% for m in meetings_list %}
+{% for m in meetings_list %}
     <tr>
-        <td><a href="{% url 'meetingdetail' id=p.id %}">{{ m.meetingid }}</a></td>
-        <td>{{ m.meetingtitle }}</td>
+        <td><a href="{% url 'meetingdetail' id=p.id %}">{{ m.meetingtitle }}</a></td>
+        <td>{{ m.meetingdate }}</td>
 
     </tr>
-    {% endfor %}
+{% endfor %}
 </table>
 {% endblock %}

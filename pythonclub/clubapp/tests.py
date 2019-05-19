@@ -6,11 +6,11 @@ from .models import Meeting, MeetingMinutes, Resource, Event #import models
 #tests below:
 class MeetingCase(TestCase):
     def test_string(self):
-        type= Meeting(meetingid="1")
-        self.assertEqual(str(type), type.meetingid) 
+        type= Meeting(meetingtitle="homework")
+        self.assertEqual(str(type), type.meetingtitle)
 
     def test_table(self):
-        self.assertEqual(str(Meeting._meta.db_table), "Meetingtitle")
+        self.assertEqual(str(Meeting._meta.db_table), "meeting")
 
 #tests for view
  
