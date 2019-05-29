@@ -123,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL='loginmessage' #LOGIN_REDIRECT_URL is a built in constant
+LOGOUT_REDIRECT_URL='logoutmessage'
