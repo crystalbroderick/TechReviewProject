@@ -3,6 +3,7 @@ from django.urls import reverse # goes to page and looks back
 from django.contrib.auth.models import User
 from .models import Meeting, MeetingMinutes, Resource, Event #import models
 from .forms import MeetingForm
+from .views import index, getMeeting, getResource
 
 #tests below:
 class MeetingCase(TestCase):
@@ -21,11 +22,6 @@ class IndexTest(TestCase):
 class GetResourceTest(TestCase):
    def test_view_url_accessible_by_name(self):
        response = self.client.get(reverse('resource'))
-       self.assertEqual(response.status_code, 200)
-
-class GetEventTest(TestCase):
-   def test_view_url_accessible_by_name(self):
-       response = self.client.get(reverse('events'))
        self.assertEqual(response.status_code, 200)
 
 class GetMeetingTest(TestCase):
