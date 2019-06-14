@@ -27,7 +27,7 @@ def meetingDetail(request, id):
     }
     return render(request, 'clubapp/meetingdetail.html', conext=context)
 
-@loginrequired
+# @loginrequired
 def newMeeting(request):
     form=MeetingForm
     if request.method=='POST':
